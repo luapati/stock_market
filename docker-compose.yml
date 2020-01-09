@@ -13,7 +13,7 @@ services:
     image: eureka-server-app
     build: MidTier/eureka-server/.
     ports:
-        - 8090:8090
+        - 8761:8761
     depends_on:
         - stock-market-charting-mysql
     links:
@@ -51,6 +51,6 @@ services:
     image: angular-app
     build: FrontEnd/angular-learning/.
     ports:
-        - 4000:80
+        - 4200:80
     links:
         - zuul-gateway-service
