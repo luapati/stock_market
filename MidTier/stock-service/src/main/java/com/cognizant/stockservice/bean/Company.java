@@ -23,7 +23,7 @@ public class Company {
 	private String name;
 	@NotNull
 	@Column(name = "co_turnover")
-	private float turnOver;
+	private long turnOver;
 	@Column(name = "co_ceo")
 	@NotNull
 	private String ceo;
@@ -38,6 +38,20 @@ public class Company {
 	@NotNull
 	@Column(name="co_stock_code")
 	private long stockCode;
+	
+	
+//	public Company(@NotNull long id, @NotNull @NotEmpty String name, @NotNull long turnOver, @NotNull String ceo,
+//			@NotNull String boardOfDirectors, @NotNull String briefWriteup, boolean active, @NotNull long stockCode) {
+//		super();
+//		this.id = id;
+//		this.name = name;
+//		this.turnOver = turnOver;
+//		this.ceo = ceo;
+//		this.boardOfDirectors = boardOfDirectors;
+//		this.briefWriteup = briefWriteup;
+//		this.active = active;
+//		this.stockCode = stockCode;
+//	}
 	public long getId() {
 		return id;
 	}
@@ -50,10 +64,10 @@ public class Company {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public float getTurnOver() {
+	public long getTurnOver() {
 		return turnOver;
 	}
-	public void setTurnOver(float turnOver) {
+	public void setTurnOver(long turnOver) {
 		this.turnOver = turnOver;
 	}
 	public String getCeo() {

@@ -19,6 +19,8 @@ import { EditProfileComponent } from './site/edit-profile/edit-profile.component
 import { AuthGuard } from './service/auth.guard';
 import { ChartComponent } from './stock/user/chart/chart.component';
 import { ChartsModule } from 'ng2-charts';
+import { AddCompanyComponent } from './stock/admin/add-company/add-company.component';
+import { AddExchangeComponent } from './stock/admin/add-exchange/add-exchange.component';
 
 
 export const routes: Routes =
@@ -30,6 +32,7 @@ export const routes: Routes =
     { path: 'user/edit', component: EditProfileComponent,canActivate:[AuthGuard] },
     { path: 'user', component: UserComponent,canActivate:[AuthGuard]},
     { path: 'chart/:id', component: ChartComponent,canActivate:[AuthGuard]},
+    { path: 'admin/add-company', component: AddCompanyComponent, canActivate:[AuthGuard]}
   ];
 @NgModule({
   declarations: [
@@ -43,7 +46,9 @@ export const routes: Routes =
     ManageExchangeComponent,
     HeaderComponent,
     EditProfileComponent,
-    ChartComponent
+    ChartComponent,
+    AddCompanyComponent,
+    AddExchangeComponent
   ],
   imports: [
     BrowserModule,

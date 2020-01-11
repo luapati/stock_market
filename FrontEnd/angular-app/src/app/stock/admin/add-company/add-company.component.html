@@ -1,0 +1,79 @@
+<!-- <div class="alert alert-success" *ngIf="saved">
+    Company details saved successfully.
+</div> -->
+<div class="container mt-5">
+    <div class="card">
+        <div class="container-fluid">
+            <h2 class="text-center mb-3">Add Company</h2>
+            <form [formGroup]="addForm">
+                <div class="form-row">
+                    <div class="form-group col-sm-12 col-md-12 col-lg-12">
+                        <label for="Name">Company Name<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="Name" formControlName="name"
+                            placeholder="Enter Company Name">
+                        <small *ngIf="(name.invalid && (name.touched || name.dirty) )&& name.errors.required"
+                            class="text-danger">Company Name is required.</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label for="TurnOver">TurnOver<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" formControlName="turnOver" id="TurnOver"
+                                placeholder="Enter TurnOver" required>
+                            <div class="text-danger " *ngIf="turnOver.invalid &&(turnOver.touched||turnOver.dirty)">
+                                <small class="text-danger" *ngIf="turnOver.errors.required">TurnOver is required
+                                </small>
+                                <small class="text-danger" *ngIf="turnOver.errors.pattern">TurnOver can contain only
+                                    number
+                                </small>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label for="CEO">CEO<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" formControlName="ceo" id="CEO"
+                                placeholder="Enter CEO Name" required>
+                            <div class="text-danger " *ngIf="ceo.invalid &&(ceo.touched||ceo.dirty)">
+                                <small class="text-danger" *ngIf="ceo.errors.required">CEO is required
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label for="brief">Brief writeup</label>
+                            <input type="textarea" class="form-control" id="brief" formControlName="briefWriteup"
+                                placeholder="Enter brief" required>
+                            <div class="text-danger " *ngIf="briefWriteup.invalid &&(briefWriteup.touched||briefWriteup.dirty)">
+                                <small class="text-danger" *ngIf="briefWriteup.errors.required">brief is required
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label for="stockCode">Stock Code</label>
+                            <input type="password" class="form-control" id="stockCode" formControlName="stockCode"
+                                placeholder="Enter Stock Code" required>
+                            <div class="text-danger " *ngIf="stockCode.invalid &&(stockCode.touched||stockCode.dirty)">
+                                <small class="text-danger" *ngIf="stockCode.errors.required">stock code is required
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row col-sm-12 col-lg-12 mb-5">
+                    <div class=" form-group mx-auto">
+                        <button type="submit" class="btn color text-light" (click)=onSubmitAddForm()
+                            [disabled]="!(addForm.valid)">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
