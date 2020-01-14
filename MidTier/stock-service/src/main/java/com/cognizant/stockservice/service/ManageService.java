@@ -47,4 +47,13 @@ public class ManageService {
 		company.setBoardOfDirectors("Empty");
 		return companyRepository.save(company);
 	}
+	public StockExchange addStockExchange (StockExchange stockExchange) {
+		stockExchange.setId(stockExchange.getId());
+		stockExchange.setStockExchange(stockExchange.getStockExchange());
+		stockExchange.setBrief(stockExchange.getBrief());
+		stockExchange.setContactAddress(stockExchange.getContactAddress());
+		stockExchange.setRemarks(stockExchange.getRemarks());
+		stockExchange.setActive(true); 
+		return stockExchangeRepository.save(stockExchange);
+	} 
 }

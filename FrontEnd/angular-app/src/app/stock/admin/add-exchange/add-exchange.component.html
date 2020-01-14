@@ -10,7 +10,7 @@
                     <div class="form-group col-sm-12 col-md-12 col-lg-12">
                         <label for="stockExchange">Stock Exchange<span class="text-danger">*</span></label>
                         <input type="text" class="form-control" id="stockExchange" formControlName="stockExchange"
-                            placeholder="Enter stockExchange" readonly>
+                            placeholder="Enter stockExchange" >
                         <small
                             *ngIf="(stockExchange.invalid && (stockExchange.touched || stockExchange.dirty) )&& stockExchange.errors.required"
                             class="text-danger">Stock Exchange is required.</small>
@@ -22,11 +22,8 @@
                             <label for="brief">Brief<span class="text-danger">*</span></label>
                             <input type="text" class="form-control" formControlName="brief" id="brief"
                                 placeholder="Enter brief" required>
-                            <div class="text-danger " *ngIf="brief.invalid &&(TurnOver.touched||brief.dirty)">
+                            <div class="text-danger " *ngIf="brief.invalid &&(brief.touched||brief.dirty)">
                                 <small class="text-danger" *ngIf="brief.errors.required">brief is required
-                                </small>
-                                <small class="text-danger" *ngIf="brief.errors.pattern">brief can contain only
-                                    number
                                 </small>
                             </div>
 
@@ -58,11 +55,25 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
+                <!-- <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label for="active">Active</label>  //change1
+                            <input type="radio" class="form-control" id="active" formControlName="active"
+                                 required>
+                            <div class="text-danger " *ngIf="active.invalid &&(active.touched||active.dirty)">
+                                <small class="text-danger" *ngIf="active.errors.required">active is required
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+			
+				
                 <div class="form-row col-sm-12 col-lg-12 mb-5">
                     <div class=" form-group mx-auto ">
-                        <button type="submit" class="btn color text-light " (click)=onSubmitEditForm()
+                        <button type="submit" class="btn color text-light " (click)=onSubmitAddForm()
                             [disabled]="!(addForm.valid)">Save</button>
                     </div>
                 </div>

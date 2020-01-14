@@ -35,4 +35,8 @@ public class ManageController {
 	public Company addCompanies(@RequestBody Company company) {
 		return manageService.addCompany(company);
 	}
+	@PostMapping("/addExchange")
+	public StockExchange addStockExchange(@RequestBody StockExchange stockExchange) {
+		return manageService.addStockExchange(stockExchange);
+	}
 }

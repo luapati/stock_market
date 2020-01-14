@@ -32,7 +32,8 @@ export const routes: Routes =
     { path: 'user/edit', component: EditProfileComponent,canActivate:[AuthGuard] },
     { path: 'user', component: UserComponent,canActivate:[AuthGuard]},
     { path: 'chart/:id', component: ChartComponent,canActivate:[AuthGuard]},
-    { path: 'admin/add-company', component: AddCompanyComponent, canActivate:[AuthGuard]}
+    { path: 'admin/add-company', component: AddCompanyComponent, canActivate:[AuthGuard]},
+    { path: 'admin/add-exchange', component: AddExchangeComponent, canActivate:[AuthGuard]}
   ];
 @NgModule({
   declarations: [

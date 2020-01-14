@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthenticationService } from './authentication.service';
 import { Company } from '../stock/company';
+import { Exchange } from '../stock/exchange';
 
 @Injectable({
   providedIn: 'root'
@@ -61,4 +62,22 @@ export class StockService {
     }
     return this.httpClient.post(this.stockApiUrl + '/manage/addcompany', body, httpOptions);
   }
+  addExchange(exchange: Exchange): Observable<any> {
+    //console.log("hi " + JSON.stringify(company))
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + this.authenticationService.getToken()
+      })
+    };
+
+    const body = {
+      "stockExchange": exchange.stockExchange, 
+      "brief": exchange.brief, 
+      "contactAddress": exchange.contactAddress, 
+      "remarks": exchange.remarks
+      
+    }
+    return this.httpClient.post(this.stockApiUrl + '/manage/addExchange', body, httpOptions);
+  }
 }
+  
